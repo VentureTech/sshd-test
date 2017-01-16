@@ -1,0 +1,339 @@
+:buildSrc:compileJava UP-TO-DATE
+:buildSrc:compileGroovy UP-TO-DATE
+:buildSrc:processResources UP-TO-DATE
+:buildSrc:classes UP-TO-DATE
+:buildSrc:jar UP-TO-DATE
+:buildSrc:assemble UP-TO-DATE
+:buildSrc:compileTestJava UP-TO-DATE
+:buildSrc:compileTestGroovy UP-TO-DATE
+:buildSrc:processTestResources UP-TO-DATE
+:buildSrc:testClasses UP-TO-DATE
+:buildSrc:test UP-TO-DATE
+:buildSrc:check UP-TO-DATE
+:buildSrc:build UP-TO-DATE
+Incremental java compilation is an incubating feature.
+:compileJava UP-TO-DATE
+:processResources
+:classes
+:jar
+:assemble
+:startServer
+(Gradle) Starting SFTP Server
+Invoking net.venturetech.sshd_test.SftpServer#start()
+15:27:31.071 INFO  o.a.sshd.common.util.SecurityUtils - BouncyCastle not registered, using the default JCE provider
+15:27:31.205 DEBUG org.apache.sshd.server.SshServer - start() - resolve bind host=localhost
+15:27:31.206 DEBUG o.a.sshd.common.io.nio2.Nio2Acceptor - Binding Nio2Acceptor to address localhost/127.0.0.1:2222
+15:27:31.207 DEBUG o.a.sshd.common.io.nio2.Nio2Acceptor - setOption(SO_REUSEADDR)[true] from property=socket-reuseaddr
+:lftpDownload[116371] 2017-01-16 15:27:32 ---- Running connect program (ssh -a -x -s -l test -p 2222 localhost sftp)
+[116371] 2017-01-16 15:27:32 ---> sending a packet, length=5, type=1(INIT), id=0
+
+15:27:32.457 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Creating IoSession on /127.0.0.1:2222 from /127.0.0.1:49870
+15:27:32.468 DEBUG o.a.s.s.session.ServerSessionImpl - Server session created Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]
+15:27:32.469 DEBUG o.a.s.c.s.h.SessionTimeoutListener - sessionCreated(ServerSessionImpl[null@/127.0.0.1:49870]) tracking
+15:27:32.471 WARN  o.a.s.c.c.VersionProperties$LazyHolder - Failed (FileNotFoundException) to load version properties: Resource does not exists
+15:27:32.471 DEBUG o.a.s.s.session.ServerSessionImpl - sendIdentification(ServerSessionImpl[null@/127.0.0.1:49870]): SSH-2.0-SSHD-UNKNOWN
+15:27:32.471 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 22 bytes
+15:27:32.473 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=22
+15:27:32.474 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 1377 bytes
+15:27:32.475 DEBUG o.a.s.s.session.ServerSessionImpl - doReadIdentification(ServerSessionImpl[null@/127.0.0.1:49870]) line='SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.1'
+15:27:32.475 DEBUG o.a.s.s.session.ServerSessionImpl - readIdentification(ServerSessionImpl[null@/127.0.0.1:49870]) client version string: SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.1
+15:27:32.483 DEBUG o.a.s.s.k.SimpleGeneratorHostKeyProvider - resolveKeyPair(/home/russ/git/main/sshd-test/sshd_test_ssh_host_key) loaded key=ssh-rsa-SHA256:PaTQA2WDJt1djrEQFYYdXy5Zi+IXO69XOddqlj/Dqz4
+15:27:32.484 DEBUG o.a.s.s.session.ServerSessionImpl - sendKexInit(ServerSessionImpl[null@/127.0.0.1:49870]) Send SSH_MSG_KEXINIT
+15:27:32.485 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 568 bytes
+15:27:32.486 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=568
+15:27:32.486 DEBUG o.a.s.s.session.ServerSessionImpl - handleKexInit(ServerSessionImpl[null@/127.0.0.1:49870]) SSH_MSG_KEXINIT
+15:27:32.487 DEBUG o.a.s.s.session.ServerSessionImpl - setNegotiationResult(ServerSessionImpl[null@/127.0.0.1:49870]) Kex: server->client aes128-ctr hmac-sha2-256 zlib@openssh.com
+15:27:32.487 DEBUG o.a.s.s.session.ServerSessionImpl - setNegotiationResult(ServerSessionImpl[null@/127.0.0.1:49870]) Kex: client->server aes128-ctr hmac-sha2-256 zlib@openssh.com
+15:27:32.490 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 80 bytes
+15:27:32.494 DEBUG org.apache.sshd.server.kex.DHGServer - next(DHGServer[ecdh-sha2-nistp256])[ServerSessionImpl[null@/127.0.0.1:49870]] process command=SSH_MSG_KEXDH_INIT
+15:27:32.501 DEBUG org.apache.sshd.server.kex.DHGServer - next(DHGServer[ecdh-sha2-nistp256])[ServerSessionImpl[null@/127.0.0.1:49870]] Send SSH_MSG_KEXDH_REPLY
+15:27:32.501 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 392 bytes
+15:27:32.501 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=392
+15:27:32.502 DEBUG o.a.s.s.session.ServerSessionImpl - handleKexMessage(ServerSessionImpl[null@/127.0.0.1:49870])[ecdh-sha2-nistp256] KEX processing complete after cmd=30
+15:27:32.502 DEBUG o.a.s.s.session.ServerSessionImpl - sendNewKeys(ServerSessionImpl[null@/127.0.0.1:49870]) Send SSH_MSG_NEWKEYS
+15:27:32.502 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 16 bytes
+15:27:32.502 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=16
+15:27:32.503 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 16 bytes
+15:27:32.506 DEBUG o.a.s.s.session.ServerSessionImpl - handleNewKeys(ServerSessionImpl[null@/127.0.0.1:49870]) SSH_MSG_NEWKEYS command=SSH_MSG_NEWKEYS
+15:27:32.507 DEBUG o.a.s.s.session.ServerSessionImpl - receiveNewKeys(ServerSessionImpl[null@/127.0.0.1:49870]) session ID=00:1f:5b:54:52:e5:69:36:e8:07:81:ad:9f:04:0d:df:5c:ff:63:b0:d0:52:b5:e9:19:32:30:48:fd:5b:99:2d
+15:27:32.511 DEBUG o.a.s.s.session.ServerSessionImpl - receiveNewKeys(ServerSessionImpl[null@/127.0.0.1:49870]) inCipher=BaseCipher[AES,16,16,AES/CTR/NoPadding], outCipher=BaseCipher[AES,16,16,AES/CTR/NoPadding], recommended blocks limit=4294967296, actual=4294967296
+15:27:32.512 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 64 bytes
+15:27:32.513 DEBUG o.a.s.s.session.ServerSessionImpl - handleServiceRequest(ServerSessionImpl[null@/127.0.0.1:49870]) SSH_MSG_SERVICE_REQUEST 'ssh-userauth'
+15:27:32.515 DEBUG o.a.s.s.s.ServerUserAuthService - ServerUserAuthService(ServerSessionImpl[null@/127.0.0.1:49870]) authorized authentication methods: password
+15:27:32.515 DEBUG o.a.s.s.session.ServerSessionImpl - handleServiceRequest(ServerSessionImpl[null@/127.0.0.1:49870]) Accepted service ssh-userauth
+15:27:32.516 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 80 bytes
+15:27:32.516 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=80
+15:27:32.520 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 80 bytes
+15:27:32.520 DEBUG o.a.s.s.s.ServerUserAuthService - process(ServerSessionImpl[null@/127.0.0.1:49870]) Received SSH_MSG_USERAUTH_REQUEST user=test, service=ssh-connection, method=none
+15:27:32.520 DEBUG o.a.s.s.s.ServerUserAuthService - process(ServerSessionImpl[null@/127.0.0.1:49870]) Authenticating user 'test' with service 'ssh-connection' and method 'none' (attempt 0 / 20)
+15:27:32.520 DEBUG o.a.s.s.s.ServerUserAuthService - process(ServerSessionImpl[null@/127.0.0.1:49870]) no authentication factory for method=none
+15:27:32.520 DEBUG o.a.s.s.s.ServerUserAuthService - handleAuthenticationFailure(null@ServerSessionImpl[null@/127.0.0.1:49870]) SSH_MSG_USERAUTH_REQUEST
+15:27:32.523 DEBUG o.a.s.s.s.ServerUserAuthService - handleAuthenticationFailure(null@ServerSessionImpl[null@/127.0.0.1:49870]) remaining methods: password
+15:27:32.523 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 80 bytes
+15:27:32.525 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=80
+[116371] 2017-01-16 15:27:32 localhost <--- test@localhost's password: XXXX
+15:27:32.525 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 160 bytes
+15:27:32.526 DEBUG o.a.s.s.s.ServerUserAuthService - process(ServerSessionImpl[null@/127.0.0.1:49870]) Received SSH_MSG_USERAUTH_REQUEST user=test, service=ssh-connection, method=password
+15:27:32.526 DEBUG o.a.s.s.s.ServerUserAuthService - process(ServerSessionImpl[null@/127.0.0.1:49870]) Authenticating user 'test' with service 'ssh-connection' and method 'password' (attempt 1 / 20)
+15:27:32.528 WARN  o.a.s.s.a.p.AcceptAllPasswordAuthenticator - authenticate(test[ServerSessionImpl[null@/127.0.0.1:49870]]: accepted without checking
+15:27:32.528 DEBUG o.a.s.s.a.password.UserAuthPassword - checkPassword(ServerSessionImpl[null@/127.0.0.1:49870]) authentication result: true
+15:27:32.529 DEBUG o.a.s.s.s.ServerUserAuthService - handleAuthenticationSuccess(test@ServerSessionImpl[null@/127.0.0.1:49870]) SSH_MSG_USERAUTH_REQUEST
+15:27:32.529 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 64 bytes
+15:27:32.530 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=64
+15:27:32.533 INFO  o.a.s.s.s.ServerUserAuthService - Session test@/127.0.0.1:49870 authenticated
+15:27:32.534 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 80 bytes
+15:27:32.534 DEBUG o.a.s.s.s.ServerConnectionService - channelOpen(ServerConnectionService[ServerSessionImpl[test@/127.0.0.1:49870]]) SSH_MSG_CHANNEL_OPEN sender=2, type=session, window-size=2097152, packet-size=32768
+15:27:32.548 DEBUG o.a.s.server.channel.ChannelSession - init() service=ServerConnectionService[ServerSessionImpl[test@/127.0.0.1:49870]] session=ServerSessionImpl[test@/127.0.0.1:49870] id=0
+15:27:32.548 DEBUG o.apache.sshd.common.channel.Window - init(Window[server/local](ChannelSession[id=0, recipient=-1]-ServerSessionImpl[test@/127.0.0.1:49870])) size=2097152, max=2097152, packet=32768
+15:27:32.549 DEBUG o.a.s.s.s.ServerConnectionService - registerChannel(ServerConnectionService[ServerSessionImpl[test@/127.0.0.1:49870]])[id=0] ChannelSession[id=0, recipient=-1]-ServerSessionImpl[test@/127.0.0.1:49870]
+15:27:32.549 DEBUG o.a.s.server.channel.ChannelSession - setRecipient(ChannelSession[id=0, recipient=-1]-ServerSessionImpl[test@/127.0.0.1:49870]) recipient=2
+15:27:32.549 DEBUG o.apache.sshd.common.channel.Window - init(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) size=2097152, max=2097152, packet=32768
+15:27:32.550 DEBUG o.apache.sshd.common.channel.Window - init(Window[server/local](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) re-initializing
+15:27:32.551 DEBUG o.apache.sshd.common.channel.Window - init(Window[server/local](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) size=2097152, max=2097152, packet=32768
+15:27:32.554 DEBUG o.a.s.s.s.ServerConnectionService - operationComplete(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) send SSH_MSG_CHANNEL_OPEN_CONFIRMATION recipient=2, sender=0, window-size=2097152, packet-size=32768
+15:27:32.554 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 80 bytes
+15:27:32.554 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=80
+15:27:32.555 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 256 bytes
+15:27:32.555 DEBUG o.a.s.server.channel.ChannelSession - handleChannelRequest(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_REQUEST env wantReply=false
+15:27:32.557 DEBUG o.a.s.server.channel.ChannelSession - handleEnv(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]): LANG = C
+15:27:32.557 DEBUG o.a.s.server.channel.ChannelSession - sendResponse(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) request=env result=ReplySuccess, want-reply=false
+15:27:32.557 DEBUG o.a.s.server.channel.ChannelSession - sendResponse(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) request=env no pending command
+15:27:32.558 DEBUG o.a.s.server.channel.ChannelSession - handleChannelRequest(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_REQUEST env wantReply=false
+15:27:32.558 DEBUG o.a.s.server.channel.ChannelSession - handleEnv(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]): LC_ALL = C
+15:27:32.558 DEBUG o.a.s.server.channel.ChannelSession - sendResponse(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) request=env result=ReplySuccess, want-reply=false
+15:27:32.558 DEBUG o.a.s.server.channel.ChannelSession - sendResponse(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) request=env no pending command
+15:27:32.558 DEBUG o.a.s.server.channel.ChannelSession - handleChannelRequest(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_REQUEST subsystem wantReply=true
+15:27:32.558 DEBUG o.a.s.server.channel.ChannelSession - handleSubsystem(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])[want-reply=true] subsystem=sftp
+15:27:32.576 DEBUG o.a.s.server.channel.ChannelSession - prepareChannelCommand(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])[subsystem] prepared command
+15:27:32.576 DEBUG o.a.s.server.channel.ChannelSession - sendResponse(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) request=subsystem result=ReplySuccess, want-reply=true
+15:27:32.576 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 64 bytes
+15:27:32.577 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=64
+15:27:32.577 DEBUG o.a.s.server.channel.ChannelSession - sendResponse(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) request=subsystem activate command
+15:27:32.577 DEBUG o.a.s.server.channel.ChannelSession - handleData(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_DATA len=9
+15:27:32.580 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - process(ServerSessionImpl[test@/127.0.0.1:49870])[length=5, type=SSH_FXP_INIT, id=6] processing
+15:27:32.580 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - doInit(ServerSessionImpl[test@/127.0.0.1:49870])[id=6] SSH_FXP_INIT (version=6)
+15:27:32.580 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - appendVersionsExtension(ServerSessionImpl[test@/127.0.0.1:49870]) value=3,4,5,6
+15:27:32.581 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - appendNewlineExtension(ServerSessionImpl[test@/127.0.0.1:49870]) value=0a
+15:27:32.582 DEBUG o.apache.sshd.common.channel.Window - waitForSpace(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) available: 2097152
+15:27:32.583 DEBUG o.apache.sshd.common.channel.Window - waitAndConsume(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) - requested=483, available=2097152
+15:27:32.590 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 272 bytes
+15:27:32.591 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=272
+[116371] 2017-01-16 15:27:32 localhost <--- got a packet, length=479, type=2(VERSION), id=0
+[116371] 2017-01-16 15:27:32 localhost ---- protocol version set to 6
+[116371] 2017-01-16 15:27:32 localhost ---> sending a packet, length=10, type=16(REALPATH), id=1
+15:27:32.615 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 64 bytes
+15:27:32.616 DEBUG o.a.s.server.channel.ChannelSession - handleData(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_DATA len=14
+15:27:32.616 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - process(ServerSessionImpl[test@/127.0.0.1:49870])[length=10, type=SSH_FXP_REALPATH, id=1] processing
+15:27:32.617 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - doRealPath(ServerSessionImpl[test@/127.0.0.1:49870])[id=1] SSH_FXP_REALPATH (path=.)
+15:27:32.621 DEBUG o.apache.sshd.common.channel.Window - waitForSpace(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) available: 2096669
+15:27:32.621 DEBUG o.apache.sshd.common.channel.Window - waitAndConsume(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) - requested=24, available=2096669
+15:27:32.621 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 80 bytes
+[116371] 2017-01-16 15:27:32 localhost <--- got a packet, length=20, type=104(NAME), id=1
+[116371] 2017-01-16 15:27:32 localhost ---- home set to /
+[116371] 2017-01-16 15:27:32 localhost ---- path on wire is `/test-download.data'
+[116371] 2017-01-16 15:27:32 localhost ---> sending a packet, length=41, type=3(OPEN), id=2
+15:27:32.622 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 96 bytes
+15:27:32.623 DEBUG o.a.s.server.channel.ChannelSession - handleData(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_DATA len=45
+15:27:32.623 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - process(ServerSessionImpl[test@/127.0.0.1:49870])[length=41, type=SSH_FXP_OPEN, id=2] processing
+15:27:32.623 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=80
+15:27:32.623 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - doOpen(ServerSessionImpl[test@/127.0.0.1:49870])[id=2] SSH_FXP_OPEN (path=/test-download.data, access=0x102, pflags=0x1, attrs={})
+15:27:32.624 DEBUG o.apache.sshd.common.channel.Window - waitForSpace(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) available: 2096645
+15:27:32.624 DEBUG o.apache.sshd.common.channel.Window - waitAndConsume(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) - requested=45, available=2096645
+15:27:32.624 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 112 bytes
+15:27:32.626 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=112
+[116371] 2017-01-16 15:27:32 localhost <--- got a packet, length=41, type=102(HANDLE), id=2
+[116371] 2017-01-16 15:27:32 localhost ---- got file handle 3231633736643637303739646134613862363134656630666134353337353863 (32)
+[116371] 2017-01-16 15:27:32 localhost ---> sending a packet, length=32821, type=6(WRITE), id=3
+[116371] 2017-01-16 15:27:32 localhost ---> sending a packet, length=28849, type=6(WRITE), id=4
+[116371] 2017-01-16 15:27:32 localhost ---> sending a packet, length=54, type=10(FSETSTAT), id=5
+[116371] 2017-01-16 15:27:32 localhost ---> sending a packet, length=41, type=4(CLOSE), id=6
+15:27:32.629 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 32768 bytes
+15:27:32.629 DEBUG o.a.s.server.channel.ChannelSession - handleData(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_DATA len=16384
+15:27:32.630 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 29248 bytes
+15:27:32.630 DEBUG o.a.s.server.channel.ChannelSession - handleData(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_DATA len=16384
+15:27:32.630 DEBUG o.a.s.server.channel.ChannelSession - handleData(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_DATA len=16384
+15:27:32.631 DEBUG o.a.s.server.channel.ChannelSession - handleData(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_DATA len=12526
+15:27:32.631 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - process(ServerSessionImpl[test@/127.0.0.1:49870])[length=32821, type=SSH_FXP_WRITE, id=3] processing
+15:27:32.631 DEBUG o.a.s.server.channel.ChannelSession - handleData(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_DATA len=103
+15:27:32.632 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - doSendStatus(ServerSessionImpl[test@/127.0.0.1:49870])[id=3] SSH_FXP_STATUS (substatus=SSH_FX_OK, lang=, msg=)
+15:27:32.632 DEBUG o.apache.sshd.common.channel.Window - waitForSpace(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) available: 2096600
+15:27:32.632 DEBUG o.apache.sshd.common.channel.Window - waitAndConsume(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) - requested=21, available=2096600
+15:27:32.633 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 80 bytes
+15:27:32.633 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - process(ServerSessionImpl[test@/127.0.0.1:49870])[length=28849, type=SSH_FXP_WRITE, id=4] processing
+[116371] 2017-01-16 15:27:32 localhost <--- got a packet, length=17, type=101(STATUS), id=3
+[116371] 2017-01-16 15:27:32 localhost ---- status code=0(OK), message=
+15:27:32.633 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - doSendStatus(ServerSessionImpl[test@/127.0.0.1:49870])[id=4] SSH_FXP_STATUS (substatus=SSH_FX_OK, lang=, msg=)
+15:27:32.633 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=80
+15:27:32.633 DEBUG o.apache.sshd.common.channel.Window - waitForSpace(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) available: 2096579
+15:27:32.634 DEBUG o.apache.sshd.common.channel.Window - waitAndConsume(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) - requested=21, available=2096579
+15:27:32.635 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 64 bytes
+15:27:32.635 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - process(ServerSessionImpl[test@/127.0.0.1:49870])[length=54, type=SSH_FXP_FSETSTAT, id=5] processing
+15:27:32.635 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=64
+15:27:32.635 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - doFsetStat(ServerSessionImpl[test@/127.0.0.1:49870])[id=5] SSH_FXP_FSETSTAT (handle=21c76d67079da4a8b614ef0fa453758c[/test-download.data], attrs={lastModifiedTime=2017-01-16T17:51:45Z})
+15:27:32.636 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - setFileTime(ServerSessionImpl[test@/127.0.0.1:49870])[/test-download.data] basic:lastModifiedTime=2017-01-16T17:51:45Z
+15:27:32.637 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - doSendStatus(ServerSessionImpl[test@/127.0.0.1:49870])[id=5] SSH_FXP_STATUS (substatus=SSH_FX_OK, lang=, msg=)
+15:27:32.637 DEBUG o.apache.sshd.common.channel.Window - waitForSpace(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) available: 2096558
+15:27:32.637 DEBUG o.apache.sshd.common.channel.Window - waitAndConsume(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) - requested=21, available=2096558
+15:27:32.638 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 64 bytes
+15:27:32.639 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - process(ServerSessionImpl[test@/127.0.0.1:49870])[length=41, type=SSH_FXP_CLOSE, id=6] processing
+15:27:32.639 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=64
+15:27:32.639 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - doClose(ServerSessionImpl[test@/127.0.0.1:49870])[id=6] SSH_FXP_CLOSE (handle=21c76d67079da4a8b614ef0fa453758c[/test-download.data])
+15:27:32.640 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - doSendStatus(ServerSessionImpl[test@/127.0.0.1:49870])[id=6] SSH_FXP_STATUS (substatus=SSH_FX_OK, lang=, msg=)
+15:27:32.640 DEBUG o.apache.sshd.common.channel.Window - waitForSpace(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) available: 2096537
+15:27:32.640 DEBUG o.apache.sshd.common.channel.Window - waitAndConsume(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) - requested=21, available=2096537
+15:27:32.640 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 64 bytes
+15:27:32.641 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=64
+[116371] 2017-01-16 15:27:32 localhost <--- got a packet, length=17, type=101(STATUS), id=4
+[116371] 2017-01-16 15:27:32 localhost ---- status code=0(OK), message=
+[116371] 2017-01-16 15:27:32 localhost <--- got a packet, length=17, type=101(STATUS), id=5
+[116371] 2017-01-16 15:27:32 localhost ---- status code=0(OK), message=
+[116371] 2017-01-16 15:27:32 localhost <--- got a packet, length=17, type=101(STATUS), id=6
+[116371] 2017-01-16 15:27:32 localhost ---- status code=0(OK), message=
+[116371] 2017-01-16 15:27:32 localhost ---- path on wire is `/test-download.data'
+[116371] 2017-01-16 15:27:32 localhost ---> sending a packet, length=41, type=3(OPEN), id=7
+15:27:32.671 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 96 bytes
+15:27:32.672 DEBUG o.a.s.server.channel.ChannelSession - handleData(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_DATA len=45
+15:27:32.672 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - process(ServerSessionImpl[test@/127.0.0.1:49870])[length=41, type=SSH_FXP_OPEN, id=7] processing
+15:27:32.672 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - doOpen(ServerSessionImpl[test@/127.0.0.1:49870])[id=7] SSH_FXP_OPEN (path=/test-download.data, access=0x81, pflags=0x2, attrs={})
+15:27:32.672 DEBUG o.apache.sshd.common.channel.Window - waitForSpace(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) available: 2096516
+15:27:32.672 DEBUG o.apache.sshd.common.channel.Window - waitAndConsume(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) - requested=45, available=2096516
+15:27:32.673 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 96 bytes
+[116371] 2017-01-16 15:27:32 localhost <--- got a packet, length=41, type=102(HANDLE), id=7
+[116371] 2017-01-16 15:27:32 localhost ---- got file handle 3563313866633838346461343634366362383061346231323531396536663136 (32)
+[116371] 2017-01-16 15:27:32 localhost ---> sending a packet, length=45, type=8(FSTAT), id=8
+15:27:32.673 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 96 bytes
+15:27:32.673 DEBUG o.a.s.server.channel.ChannelSession - handleData(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_DATA len=49
+15:27:32.673 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=96
+15:27:32.673 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - process(ServerSessionImpl[test@/127.0.0.1:49870])[length=45, type=SSH_FXP_FSTAT, id=8] processing
+15:27:32.674 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - doFStat(ServerSessionImpl[test@/127.0.0.1:49870])[id=8] SSH_FXP_FSTAT (handle=5c18fc884da4646cb80a4b12519e6f16[/test-download.data], flags=0x25)
+15:27:32.676 DEBUG o.apache.sshd.common.channel.Window - waitForSpace(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) available: 2096471
+15:27:32.676 DEBUG o.apache.sshd.common.channel.Window - waitAndConsume(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) - requested=71, available=2096471
+15:27:32.676 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 112 bytes
+[116371] 2017-01-16 15:27:32 localhost <--- got a packet, length=67, type=105(ATTRS), id=8
+[116371] 2017-01-16 15:27:32 localhost ---- file info: size=61564, date=Mon Jan 16 11:51:45 2017
+[116371] 2017-01-16 15:27:32 ---> sending a packet, length=53, type=5(READ), id=9
+[116371] 2017-01-16 15:27:32 ---> sending a packet, length=53, type=5(READ), id=10
+15:27:32.677 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=112
+15:27:32.677 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 80 bytes
+15:27:32.677 DEBUG o.a.s.server.channel.ChannelSession - handleData(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_DATA len=114
+15:27:32.677 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - process(ServerSessionImpl[test@/127.0.0.1:49870])[length=53, type=SSH_FXP_READ, id=9] processing
+15:27:32.677 DEBUG o.apache.sshd.common.channel.Window - waitForSpace(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) available: 2096400
+15:27:32.678 DEBUG o.apache.sshd.common.channel.Window - waitAndConsume(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) - requested=16397, available=2096400
+15:27:32.678 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 16480 bytes
+15:27:32.679 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - process(ServerSessionImpl[test@/127.0.0.1:49870])[length=53, type=SSH_FXP_READ, id=10] processing
+15:27:32.679 DEBUG o.apache.sshd.common.channel.Window - waitForSpace(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) available: 2080003
+15:27:32.679 DEBUG o.apache.sshd.common.channel.Window - waitAndConsume(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) - requested=16397, available=2080003
+[116371] 2017-01-16 15:27:32 localhost <--- got a packet, length=16393, type=103(DATA), id=9
+[116371] 2017-01-16 15:27:32 localhost ---- data packet: pos=0, size=16384
+[116371] 2017-01-16 15:27:32 localhost ---> sending a packet, length=53, type=5(READ), id=11
+15:27:32.679 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=16480
+15:27:32.679 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 64 bytes
+15:27:32.679 DEBUG o.a.s.server.channel.ChannelSession - handleData(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_DATA len=57
+15:27:32.680 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 16480 bytes
+15:27:32.680 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - process(ServerSessionImpl[test@/127.0.0.1:49870])[length=53, type=SSH_FXP_READ, id=11] processing
+[116371] 2017-01-16 15:27:32 localhost <--- got a packet, length=16393, type=103(DATA), id=10
+15:27:32.681 DEBUG o.apache.sshd.common.channel.Window - waitForSpace(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) available: 2063606
+[116371] 2017-01-16 15:27:32 localhost ---- put a packet with id=10 on out-of-order chain (need_pos=16384 packet_pos=32768)
+[116371] 2017-01-16 15:27:32 ---> sending a packet, length=53, type=5(READ), id=12
+15:27:32.681 DEBUG o.apache.sshd.common.channel.Window - waitAndConsume(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) - requested=16397, available=2063606
+15:27:32.681 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=16480
+15:27:32.681 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 64 bytes
+15:27:32.682 DEBUG o.a.s.server.channel.ChannelSession - handleData(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_DATA len=57
+15:27:32.682 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 16480 bytes
+15:27:32.682 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - process(ServerSessionImpl[test@/127.0.0.1:49870])[length=53, type=SSH_FXP_READ, id=12] processing
+15:27:32.682 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=16480
+[116371] 2017-01-16 15:27:32 localhost <--- got a packet, length=16393, type=103(DATA), id=11
+[116371] 2017-01-16 15:27:32 localhost ---- data packet: pos=16384, size=16384
+[116371] 2017-01-16 15:27:32 ---> sending a packet, length=53, type=5(READ), id=13
+[116371] 2017-01-16 15:27:32 localhost ---- data packet: pos=32768, size=16384
+[116371] 2017-01-16 15:27:32 localhost ---> sending a packet, length=53, type=5(READ), id=14
+15:27:32.683 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - doSendStatus(ServerSessionImpl[test@/127.0.0.1:49870])[id=12] SSH_FXP_STATUS (substatus=SSH_FX_EOF, lang=, msg=Internal EOFException: Unable to read 16384 bytes from offset=65536 of 5c18fc884da4646cb80a4b12519e6f16)
+15:27:32.683 DEBUG o.apache.sshd.common.channel.Window - waitForSpace(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) available: 2047209
+15:27:32.683 DEBUG o.apache.sshd.common.channel.Window - waitAndConsume(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) - requested=124, available=2047209
+15:27:32.683 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 192 bytes
+[116371] 2017-01-16 15:27:32 localhost <--- got a packet, length=120, type=101(STATUS), id=12
+[116371] 2017-01-16 15:27:32 localhost ---- status code=1(EOF), message=Internal EOFException: Unable to read 16384 bytes from offset=65536 of 5c18fc884da4646cb80a4b12519e6f16
+[116371] 2017-01-16 15:27:32 localhost ---- eof
+[116371] 2017-01-16 15:27:32 ---> sending a packet, length=41, type=4(CLOSE), id=15
+[116371] 2017-01-16 15:27:32 expected pos=61564, actual pos=49152
+mget: test-download.data: file size decreased during transfer
+[116371] 2017-01-16 15:27:32 ---- Disconnecting
+15:27:32.686 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 64 bytes
+15:27:32.686 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=192
+15:27:32.687 DEBUG o.a.s.server.channel.ChannelSession - handleData(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_DATA len=114
+15:27:32.687 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) read 160 bytes
+15:27:32.687 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - process(ServerSessionImpl[test@/127.0.0.1:49870])[length=53, type=SSH_FXP_READ, id=13] processing
+15:27:32.688 DEBUG o.a.s.server.channel.ChannelSession - handleData(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_DATA len=45
+(Gradle) Stopping SFTP Server
+15:27:32.688 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - doSendStatus(ServerSessionImpl[test@/127.0.0.1:49870])[id=13] SSH_FXP_STATUS (substatus=SSH_FX_EOF, lang=, msg=Internal EOFException: Unable to read 16384 bytes from offset=98304 of 5c18fc884da4646cb80a4b12519e6f16)
+15:27:32.689 DEBUG o.a.s.server.channel.ChannelSession - handleEof(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_EOF
+15:27:32.689 DEBUG o.apache.sshd.common.channel.Window - waitForSpace(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) available: 2047085
+15:27:32.689 DEBUG o.apache.sshd.common.channel.Window - waitAndConsume(Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])) - requested=124, available=2047085
+15:27:32.689 DEBUG o.a.s.server.channel.ChannelSession - handleClose(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) SSH_MSG_CHANNEL_CLOSE
+15:27:32.689 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 80 bytes
+15:27:32.689 DEBUG o.a.s.server.channel.ChannelSession - handleClose(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) prevent sending EOF
+15:27:32.690 DEBUG o.a.s.server.channel.ChannelSession - close(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) Closing gracefully
+15:27:32.690 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - process(ServerSessionImpl[test@/127.0.0.1:49870])[length=53, type=SSH_FXP_READ, id=14] processing
+15:27:32.695 DEBUG o.apache.sshd.common.channel.Window - Closing Window[server/local](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])
+15:27:32.695 DEBUG o.apache.sshd.common.channel.Window - Closing Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])
+15:27:32.695 DEBUG o.a.s.server.channel.ChannelSession - flush(ChannelOutputStream[ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]] SSH_MSG_CHANNEL_DATA) failed (WindowClosedException) to wait for space of len=12425: Already closed: Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])
+15:27:32.695 DEBUG o.a.s.server.channel.ChannelSession - flush(ChannelOutputStream[ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]] SSH_MSG_CHANNEL_DATA) closing due to window closed
+15:27:32.696 ERROR o.a.s.s.subsystem.sftp.SftpSubsystem - run(ServerSessionImpl[test@/127.0.0.1:49870]) WindowClosedException caught in SFTP subsystem: Already closed: Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])
+15:27:32.695 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=80
+Shutting down SFTP
+15:27:32.699 DEBUG org.apache.sshd.server.SshServer - close(SshServer[a9f224c]) Closing gracefully
+15:27:32.701 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - run(ServerSessionImpl[test@/127.0.0.1:49870]) caught exception details
+org.apache.sshd.common.channel.WindowClosedException: Already closed: Window[server/remote](ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])
+	at org.apache.sshd.common.channel.Window.waitForCondition(Window.java:303)
+	at org.apache.sshd.common.channel.Window.waitForSpace(Window.java:256)
+	at org.apache.sshd.common.channel.ChannelOutputStream.flush(ChannelOutputStream.java:176)
+	at org.apache.sshd.server.subsystem.sftp.SftpSubsystem.send(SftpSubsystem.java:3322)
+	at org.apache.sshd.server.subsystem.sftp.SftpSubsystem.doRead(SftpSubsystem.java:2070)
+	at org.apache.sshd.server.subsystem.sftp.SftpSubsystem.process(SftpSubsystem.java:468)
+	at org.apache.sshd.server.subsystem.sftp.SftpSubsystem.run(SftpSubsystem.java:418)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+15:27:32.701 DEBUG o.a.s.s.c.ChannelSession$CommandCloseable - Wait 5000 ms for shell to exit cleanly on ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]
+15:27:32.702 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - run(ServerSessionImpl[test@/127.0.0.1:49870]) closed pending handle 5c18fc884da4646cb80a4b12519e6f16 [/test-download.data]
+15:27:32.702 DEBUG o.a.s.server.channel.ChannelSession - closeShell(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) exit code=0
+15:27:32.702 DEBUG o.a.s.server.channel.ChannelSession - onExit(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) code=0 message='' shell closed
+15:27:32.703 DEBUG o.a.sshd.common.io.nio2.Nio2Acceptor - Unbinding
+15:27:32.703 DEBUG o.a.s.c.c.AbstractChannel$GracefulChannelCloseable - close(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])[immediately=false] processing
+15:27:32.703 DEBUG o.a.s.c.c.AbstractChannel$GracefulChannelCloseable - close(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])[immediately=false] send SSH_MSG_CHANNEL_CLOSE
+15:27:32.703 DEBUG o.a.sshd.common.io.nio2.Nio2Acceptor - close(org.apache.sshd.common.io.nio2.Nio2Acceptor@279f0d3) Closing gracefully
+15:27:32.703 DEBUG o.a.sshd.common.io.nio2.Nio2Session - Writing 64 bytes
+15:27:32.703 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleCompletedWriteCycle(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) finished writing len=64
+15:27:32.704 DEBUG o.a.sshd.common.io.nio2.Nio2Session - close(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) Closing gracefully
+15:27:32.705 DEBUG o.a.s.c.c.AbstractChannel$GracefulChannelCloseable - handleClosePacketWritten(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])[immediately=false] SSH_MSG_CHANNEL_CLOSE written on channel
+15:27:32.705 DEBUG o.a.s.s.session.ServerSessionImpl - close(ServerSessionImpl[test@/127.0.0.1:49870]) Closing immediately
+15:27:32.706 DEBUG o.a.s.c.u.c.SequentialCloseable - doClose(false) signal close complete
+15:27:32.706 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - destroy(ServerSessionImpl[test@/127.0.0.1:49870]) - mark as closed
+15:27:32.707 DEBUG o.a.s.s.subsystem.sftp.SftpSubsystem - destroy(ServerSessionImpl[test@/127.0.0.1:49870]) - shutdown executor service - runners count=0
+15:27:32.707 DEBUG o.a.s.s.s.ServerConnectionService - close(ServerConnectionService[ServerSessionImpl[test@/127.0.0.1:49870]]) Closing immediately
+15:27:32.707 DEBUG o.a.s.c.file.root.RootedFileSystem - close(/tmp/sshd-test)
+15:27:32.708 DEBUG o.a.s.server.channel.ChannelSession - close(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])[Immediately] state already Immediate
+15:27:32.708 DEBUG o.a.s.s.s.ServerConnectionService - unregisterChannel(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]) result=ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]
+15:27:32.708 DEBUG o.a.s.c.c.AbstractChannel$GracefulChannelCloseable - close(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870])[immediately=true] processing
+15:27:32.708 DEBUG o.a.s.c.u.c.SequentialCloseable - doClose(true) signal close complete
+15:27:32.709 DEBUG o.a.s.s.s.ServerConnectionService - close(ServerConnectionService[ServerSessionImpl[test@/127.0.0.1:49870]])[Immediately] closed
+15:27:32.709 DEBUG o.a.s.server.channel.ChannelSession - close(ChannelSession[id=0, recipient=2]-ServerSessionImpl[test@/127.0.0.1:49870]][Graceful] - operationComplete() closed
+15:27:32.709 DEBUG o.a.sshd.common.io.nio2.Nio2Session - close(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870])[Immediately] state already Closed
+15:27:32.709 DEBUG o.a.sshd.common.io.nio2.Nio2Session - handleReadCycleCompletion(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]) IoSession has been closed, stop reading
+15:27:32.709 DEBUG o.a.s.c.u.c.SequentialCloseable - doClose(true) signal close complete
+15:27:32.709 DEBUG o.a.s.s.session.ServerSessionImpl - close(ServerSessionImpl[test@/127.0.0.1:49870])[Immediately] closed
+15:27:32.709 DEBUG o.a.sshd.common.io.nio2.Nio2Session - close(Nio2Session[local=/127.0.0.1:2222, remote=/127.0.0.1:49870]][Graceful] - operationComplete() closed
+15:27:32.709 DEBUG o.a.sshd.common.io.nio2.Nio2Acceptor - close(org.apache.sshd.common.io.nio2.Nio2Acceptor@279f0d3][Graceful] - operationComplete() closed
+15:27:32.709 DEBUG o.a.s.c.io.nio2.Nio2ServiceFactory - close(org.apache.sshd.common.io.nio2.Nio2ServiceFactory@78c23e8b) Closing gracefully
+15:27:32.709 DEBUG o.a.s.c.io.nio2.Nio2ServiceFactory - Shutdown group
+15:27:32.718 DEBUG o.a.s.c.io.nio2.Nio2ServiceFactory - Group successfully shut down
+15:27:32.718 DEBUG o.a.s.c.io.nio2.Nio2ServiceFactory - close(org.apache.sshd.common.io.nio2.Nio2ServiceFactory@78c23e8b)[Graceful] closed
+15:27:32.719 DEBUG o.a.s.c.u.c.SequentialCloseable - doClose(false) signal close complete
+15:27:32.719 DEBUG o.a.s.c.u.c.SequentialCloseable - doClose(true) signal close complete
+15:27:32.719 DEBUG org.apache.sshd.server.SshServer - close(SshServer[a9f224c]][Graceful] - operationComplete() closed
+
+BUILD SUCCESSFUL
+
+Total time: 2.714 secs
