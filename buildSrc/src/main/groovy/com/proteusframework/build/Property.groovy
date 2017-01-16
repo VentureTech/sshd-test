@@ -13,7 +13,7 @@ package com.proteusframework.build
 
 /**
  * Build property
- * @author Russ Tennant (russ@i2rd.com)
+ * @author Russ Tennant (russ@venturetech.net)
  * @since 12/3/13 4:13 PM
  */
 class Property

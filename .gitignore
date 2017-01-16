@@ -17,3 +17,4 @@ atlassian-ide-plugin.xml
 
 spring-shell.log
 derby.log
+/sshd_test_ssh_host_key

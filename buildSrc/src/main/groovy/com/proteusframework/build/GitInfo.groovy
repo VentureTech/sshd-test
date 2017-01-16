@@ -15,11 +15,11 @@ import org.ajoberstar.grgit.Grgit
 import org.slf4j.LoggerFactory
 
 /**
- * Plugin to provide git information
+ * Provide git information
  *
- * @author Russ Tennant (russ@i2rd.com)
+ * @author Russ Tennant (russ@venturetech.net)
  */
-public class GitInfo
+class GitInfo
 {
     String branch=''
     String ref=''

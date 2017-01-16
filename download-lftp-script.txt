@@ -1,0 +1,8 @@
+debug -c -p -t 9
+open -u test,test -p 2222 sftp://localhost
+set xfer:clobber true
+set sftp:auto-confirm true
+lcd data
+mput test-download.data
+mget -O copy test-download.data
+exit

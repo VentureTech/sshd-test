@@ -1,28 +1,13 @@
-import com.proteusframework.build.Property
-
-// Check required properties
-def props = [
-    new Property(name:'repo_venturetech_username',description:'Username to access the artifact repository'),
-    new Property(name:'repo_venturetech_password',description:'Password to access the artifact repository'),
-    new Property(name:'publish_venturetech_username',description:'Username to upload to the artifact repository', required:false),
-    new Property(name:'publish_venturetech_password',description:'Password to upload to the artifact repository', required:false),
-];
 
 
 settings.rootProject.name = "${app_name}"
 
 settings.gradle.projectsLoaded( {
-    props.each({it.test(settings)})
-
     settings.gradle.rootProject.ext.hasLocalRepo = settings.hasProperty('local_repo');
-    settings.gradle.rootProject.ext.repoReleaseURL = "${repo_venture_tech_url}/release"
-    settings.gradle.rootProject.ext.repoSnapshotURL = "${repo_venture_tech_url}/snapshot"
-    settings.gradle.rootProject.ext.warTaskSpecified = gradle.startParameter.taskNames.any {it == 'war'}
     settings.gradle.rootProject.ext.isIDEA = System.getProperties().containsKey('idea.active') ||
         System.getProperties().containsKey('idea.paths.selector') ||
         plugins.any({it.class.name == 'JetGradlePlugin'})
     settings.gradle.rootProject.ext.isEclipse = System.getProperties().containsKey('eclipse.product')
-    settings.gradle.rootProject.ext.compileLibraries = settings.hasProperty('compile_libraries') ||
-        settings.gradle.rootProject.ext.isIDEA;
+
 })
 
