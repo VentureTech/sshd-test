@@ -1,0 +1,100 @@
+import com.proteusframework.build.GitInfo
+
+buildscript {
+    ext.kotlin_version = '1.0.6'
+    repositories {
+        if(hasLocalRepo){ maven { url = local_repo } }
+        maven {
+            credentials {
+                username "${repo_venturetech_username}"
+                password "${repo_venturetech_password?:''}"
+            }
+            url repoReleaseURL
+        }
+    }
+    dependencies {
+        classpath 'org.ajoberstar:gradle-git:1.3.0'
+        // aspectj-weave plugin for our use of Spring @Configurable
+        classpath 'com.i2rd:gradle-aspectj-weave:1.3',
+            'org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+//        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-M2'
+    }
+
+}
+repositories {
+//    mavenLocal()
+    if(hasLocalRepo){ maven { url = local_repo } }
+    maven {
+        credentials {
+            username repo_venturetech_username
+            password repo_venturetech_password
+        }
+        url repoReleaseURL
+    }
+    maven {
+        credentials {
+            username repo_venturetech_username
+            password repo_venturetech_password
+        }
+        url repoSnapshotURL
+    }
+    maven {
+        url "https://dl.bintray.com/kotlin/exposed"
+    }
+}
+GitInfo.populateProject(project)
+
+apply plugin: 'kotlin'
+apply from: 'gradle/plugins.gradle'
+apply from: 'gradle/config.gradle'
+apply from: 'gradle/dependencies.gradle'
+apply from: 'gradle/artifacts.gradle'
+apply from: 'gradle/tests.gradle'
+apply from: 'gradle/aspectj.gradle'
+apply from: 'gradle/publishing.gradle'
+apply from: 'gradle/analysis.gradle'
+apply from: 'gradle/idea.gradle'
+
+
+
+task autoDeploy(type: com.proteusframework.build.DeployTask) {
+    group = 'Publishing'
+    id = "${findProperty('aws_id')?:'MISSING_ID'}"
+    secret ="${findProperty('aws_secret')?:'MISSING_SECRET'}"
+}
+
+task wrapper(type: Wrapper) {
+    group 'Build Setup'
+    gradleVersion = '3.3'
+}
+
+
+
+//noinspection GroovyAssignabilityCheck
+configurations.all {
+    exclude group: 'org.eclipse.birt.runtime.3_7_1', module: 'org.apache.commons.codec'
+    resolutionStrategy {
+        dependencySubstitution {
+            substitute module('bouncycastle:bcmail-jdk14:138') with module('org.bouncycastle:bcmail-jdk15on:1.52')
+            substitute module('bouncycastle:bcprov-jdk14:138') with module('org.bouncycastle:bcprov-jdk15on:1.52')
+            substitute module('bouncycastle:bctsp-jdk14:138') with module('org.bouncycastle:bctsp-jdk15on:1.46')
+        }
+        eachDependency {DependencyResolveDetails details ->
+            if (details.requested.group == 'org.aspectj' && details.requested.name == 'aspectjweaver')
+            {
+                details.useVersion aspectjVersion
+            }
+            if (details.requested.group == 'xml-apis')
+            {
+                details.useVersion '1.4.+'
+            }
+        }
+        // cache dynamic versions for ...
+//        cacheDynamicVersionsFor 0, 'seconds'
+        // cache changing modules (SNAPSHOT) for ...
+        cacheChangingModulesFor 300, 'seconds'
+    }
+}
+
+
