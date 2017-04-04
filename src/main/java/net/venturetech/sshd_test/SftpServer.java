@@ -101,18 +101,17 @@ public class SftpServer
             System.err.println("Unable to access directory: " + testDir);
             System.exit(1);
         }
-        final ServerBuilder serverBuilder = ServerBuilder.builder();
         synchronized (this)
         {
-            sshd = serverBuilder.build();
+            sshd = SshServer.setUpDefaultServer();
         }
         if(maxPacketSize != null)
             sshd.getProperties().put(SftpSubsystem.MAX_PACKET_LENGTH_PROP, maxPacketSize);
-        sshd.setCompressionFactories(Arrays.asList(
-            BuiltinCompressions.delayedZlib,
-            BuiltinCompressions.zlib,
-            BuiltinCompressions.none
-        ));
+//        sshd.setCompressionFactories(Arrays.asList(
+//            BuiltinCompressions.delayedZlib,
+//            BuiltinCompressions.zlib,
+//            BuiltinCompressions.none
+//        ));
         sshd.setPort(2222);
         sshd.setHost("localhost");
         sshd.setUserAuthFactories(Arrays.asList(
@@ -125,7 +124,6 @@ public class SftpServer
         FileSystem fileSystem = newFileSystem(testDir.toPath(), SftpServer.class.getClassLoader());
         FileSystemFactory fileSystemFactory = session -> fileSystem;
         sshd.setFileSystemFactory(fileSystemFactory);
-        sshd.setSessionFactory(new SessionFactory(sshd));
 
         SimpleGeneratorHostKeyProvider hostKey = new SimpleGeneratorHostKeyProvider(new File("sshd_test_ssh_host_key"));
         hostKey.setAlgorithm(KeyUtils.RSA_ALGORITHM);
